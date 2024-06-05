@@ -35,4 +35,14 @@ export const BaseColaboradores = [
     cargo: "Ingeniero DevOps",
     telefono: "99226644",
   },
+
+  // Este es el cuarto objeto en el arreglo, que representa un colaborador.
+  {
+    id: "4",
+    nombre: "Carlos Alfredo Duque",
+    correo: "cduque@colaborador.com",
+    edad: "45",
+    cargo: "Ingeniero Jr",
+    telefono: "5547417878",
+  },
 ];
