@@ -1,9 +1,12 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Table } from "react-bootstrap";
 
 const Listado = ({ colaboradores, eliminarColaborador }) => {
+
+
+
   return (
-    <table className="table">
+    <Table striped bordered hover size="sm">
       <thead>
         <tr>
           <th>ID</th>
@@ -26,7 +29,7 @@ const Listado = ({ colaboradores, eliminarColaborador }) => {
             <td>{colaborador.telefono}</td>
             <td>
               <button
-                className="btn btn-danger"
+                className="btn btn-sm btn-danger w-100"
                 onClick={() => eliminarColaborador(colaborador.id)}
               >
                 Eliminar
@@ -35,7 +38,7 @@ const Listado = ({ colaboradores, eliminarColaborador }) => {
           </tr>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 };
 

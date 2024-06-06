@@ -49,21 +49,27 @@ const App = () => {
   );
 
   return (
-    <div className="container">
-      <h1>Listado de Colaboradores</h1>
-      <Alert mensaje={mensaje} />
-      <Buscador
-        buscar={buscar}
-        handleChange={handleBuscarChange}
-      />
-      <Listado
-        colaboradores={colaboradoresFiltrados}
-        eliminarColaborador={eliminarColaborador}
-      />
-      <Formulario
-        agregarColaborador={agregarColaborador}
-        setMensaje={setMensaje}
-      />
+    <div className="container-fluid">
+      <h1 className="fw-bold my-3">Lista de Colaboradores</h1>
+      <div className="row">
+        <div className="col-9 d-flex flex-column gap-2">
+          <Buscador
+            buscar={buscar}
+            handleChange={handleBuscarChange}
+          />
+          <Listado
+            colaboradores={colaboradoresFiltrados}
+            eliminarColaborador={eliminarColaborador}
+          />
+        </div>
+        <div className="col-3">
+          <Formulario
+            agregarColaborador={agregarColaborador}
+            setMensaje={setMensaje}
+          />
+          <Alert mensaje={mensaje} />
+        </div>
+      </div>
     </div>
   );
 };
