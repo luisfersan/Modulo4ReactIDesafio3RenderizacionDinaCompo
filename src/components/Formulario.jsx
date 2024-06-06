@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Formulario = ({ agregarColaborador, setMensaje }) => {
   const [form, setForm] = useState({
@@ -32,64 +31,65 @@ const Formulario = ({ agregarColaborador, setMensaje }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Nombre</label>
+    <>
+      <h4 className="mb-2">Agregar colaborador</h4>
+        <form
+          className="d-flex flex-column gap-2 my-3"
+          onSubmit={handleSubmit}
+        >
         <input
           type="text"
           className="form-control"
           name="nombre"
+          placeholder="Nombre del colaborador"
           value={form.nombre}
           onChange={handleChange}
         />
-      </div>
-      <div className="form-group">
-        <label>Correo</label>
+
         <input
           type="email"
           className="form-control"
           name="correo"
+          placeholder="Correo del colaborador"
           value={form.correo}
           onChange={handleChange}
         />
-      </div>
-      <div className="form-group">
-        <label>Edad</label>
+
         <input
           type="number"
           className="form-control"
           name="edad"
+          placeholder="Edad del colaborador"
           value={form.edad}
           onChange={handleChange}
         />
-      </div>
-      <div className="form-group">
-        <label>Cargo</label>
+
         <input
           type="text"
           className="form-control"
           name="cargo"
+          placeholder="Cargo del colaborador"
           value={form.cargo}
           onChange={handleChange}
         />
-      </div>
-      <div className="form-group">
-        <label>Teléfono</label>
+
         <input
           type="text"
           className="form-control"
           name="telefono"
+          placeholder="Teléfono del colaborador"
           value={form.telefono}
           onChange={handleChange}
         />
-      </div>
+
       <button
         type="submit"
-        className="btn btn-primary"
+        className="btn btn-primary w-100"
       >
         Agregar Colaborador
       </button>
     </form>
+    </>
   );
 };
 

@@ -1,17 +1,14 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Buscador = ({ buscar, handleChange }) => {
   return (
-    <div className="form-group">
       <input
         type="text"
-        className="form-control"
+        className="form-control w-50"
         placeholder="Buscar colaboradores"
         value={buscar}
         onChange={handleChange}
       />
-    </div>
   );
 };
 
