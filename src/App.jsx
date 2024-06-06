@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Container, Row, Col } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BaseColaboradores } from "./BaseColaboradores";
 import Listado from "./components/Listado";
@@ -49,10 +50,10 @@ const App = () => {
   );
 
   return (
-    <div className="container-fluid">
-      <h1 className="fw-bold my-3">Lista de Colaboradores</h1>
-      <div className="row">
-        <div className="col-9 d-flex flex-column gap-2">
+    <Container fluid>
+      <h1 className="fw-bold my-3 text-center">Lista de Colaboradores</h1>
+      <Row>
+        <Col xs={12} lg={9} className="d-flex flex-column gap-2 mb-3">
           <Buscador
             buscar={buscar}
             handleChange={handleBuscarChange}
@@ -61,16 +62,16 @@ const App = () => {
             colaboradores={colaboradoresFiltrados}
             eliminarColaborador={eliminarColaborador}
           />
-        </div>
-        <div className="col-3">
+        </Col>
+        <Col xs={12} lg={3} className="mb-3">
           <Formulario
             agregarColaborador={agregarColaborador}
             setMensaje={setMensaje}
           />
           <Alert mensaje={mensaje} />
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

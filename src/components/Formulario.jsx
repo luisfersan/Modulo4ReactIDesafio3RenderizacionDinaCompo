@@ -32,7 +32,7 @@ const Formulario = ({ agregarColaborador, setMensaje }) => {
 
   return (
     <>
-      <h4 className="mb-2">Agregar colaborador</h4>
+      <h4 className="mb-2">Agregar Colaborador</h4>
         <form
           className="d-flex flex-column gap-2 my-3"
           onSubmit={handleSubmit}
