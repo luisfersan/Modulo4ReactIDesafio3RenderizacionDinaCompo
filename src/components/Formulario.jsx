@@ -9,6 +9,9 @@ const Formulario = ({ colaboradores, agregarColaborador, setMensaje }) => {
     telefono: "",
   });
 
+ const ultimoColaborador = colaboradores[colaboradores.length - 1]; //Consulta por último colaborador
+ const idNuevoColaborador = parseInt(ultimoColaborador.id) + 1; // Obtiene id de último colaborador
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -34,7 +37,7 @@ const Formulario = ({ colaboradores, agregarColaborador, setMensaje }) => {
         type: "danger",
       });
     } else {
-      agregarColaborador(form);
+      agregarColaborador({id:idNuevoColaborador,...form}); // Se asigna id correspondiente al siguiente del último colaborador
       setForm({ nombre: "", correo: "", edad: "", cargo: "", telefono: "" });
       setMensaje({
         text: "Colaborador agregado exitosamente.",
