@@ -37,7 +37,7 @@ const Formulario = ({ colaboradores, agregarColaborador, setMensaje }) => {
         type: "danger",
       });
     } else {
-      agregarColaborador({id:idNuevoColaborador,...form}); // Se asigna id correspondiente al siguiente del último colaborador
+      agregarColaborador({id:idNuevoColaborador.toString(),...form}); // Se asigna id correspondiente al siguiente del último colaborador
       setForm({ nombre: "", correo: "", edad: "", cargo: "", telefono: "" });
       setMensaje({
         text: "Colaborador agregado exitosamente.",
