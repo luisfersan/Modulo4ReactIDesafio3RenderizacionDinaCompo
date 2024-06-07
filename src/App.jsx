@@ -50,6 +50,9 @@ const App = () => {
     );
     // Agregar mensaje de eliminación
     setMensaje({ text: "Registro eliminado correctamente.", type: "success" });
+    setTimeout(() => {
+      setMensaje({ text: "", type: "" });
+    }, 3000);
   };
 
   // Manejar el cambio en la barra de búsqueda
