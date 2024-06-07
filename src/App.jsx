@@ -34,11 +34,7 @@ const App = () => {
 
   // Función para agregar un colaborador
   const agregarColaborador = (colaborador) => {
-    const nuevoColaborador = {
-      ...colaborador,
-      id: (colaboradores.length + 1).toString(),
-    };
-    setColaboradores([...colaboradores, nuevoColaborador]);
+    setColaboradores([...colaboradores, colaborador]);
     // Agregar mensaje de éxito
     setMensaje({ text: "Colaborador agregado exitosamente.", type: "success" });
   };
