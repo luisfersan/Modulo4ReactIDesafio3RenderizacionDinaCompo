@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Formulario = ({ agregarColaborador, setMensaje }) => {
+const Formulario = ({ colaboradores, agregarColaborador, setMensaje }) => {
   const [form, setForm] = useState({
     nombre: "",
     correo: "",
@@ -15,7 +15,20 @@ const Formulario = ({ agregarColaborador, setMensaje }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(form).some((field) => field === "")) {
+    const correo = colaboradores.some(colaborador => colaborador.correo === Object.values(form)[1]);
+    const telefono = colaboradores.some(colaborador => colaborador.telefono === Object.values(form)[4]);
+
+    if(correo){
+      setMensaje({
+        text: "El correo ya fue registrado.",
+        type: "danger",
+      });
+    } else if(telefono){
+      setMensaje({
+        text: "El Teléfono ya fue registrado.",
+        type: "danger",
+      });
+    } else if (Object.values(form).some((field) => field === "")) {
       setMensaje({
         text: "Todos los campos son obligatorios.",
         type: "danger",
@@ -27,6 +40,12 @@ const Formulario = ({ agregarColaborador, setMensaje }) => {
         text: "Colaborador agregado exitosamente.",
         type: "success",
       });
+      setTimeout(() => {
+        setMensaje({
+          text: "",
+          type: "",
+        });
+      }, 5000);
     }
   };
 
@@ -60,6 +79,7 @@ const Formulario = ({ agregarColaborador, setMensaje }) => {
           className="form-control"
           name="edad"
           placeholder="Edad del colaborador"
+          min={18}
           value={form.edad}
           onChange={handleChange}
         />
